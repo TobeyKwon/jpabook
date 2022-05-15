@@ -13,7 +13,7 @@ public class Delivery {
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "delivery")
-    private Orders order;
+    private Order order;
 
     @Embedded
     private Address address;

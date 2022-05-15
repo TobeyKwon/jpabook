@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor @Builder
-@Entity
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
@@ -18,6 +18,7 @@ public class Member {
     @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Orders> orders = new ArrayList<>();
+    @Builder.Default
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 }

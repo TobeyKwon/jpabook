@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 
 @Data
-@NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
 public class Book extends Item {
     private String director;
