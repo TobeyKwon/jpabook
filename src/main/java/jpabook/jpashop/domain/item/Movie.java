@@ -12,6 +12,6 @@ import javax.persistence.Entity;
 @NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
 public class Movie extends Item {
-    private String author;
-    private String isbn;
+    private String director;
+    private String actor;
 }
