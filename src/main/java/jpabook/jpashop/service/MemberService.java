@@ -39,4 +39,10 @@ public class MemberService {
     private boolean validateDuplicateMember(Member member) {
         return memberRepository.findByName(member.getName()).isEmpty();
     }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findById(id);
+        member.setName(name);
+    }
 }
