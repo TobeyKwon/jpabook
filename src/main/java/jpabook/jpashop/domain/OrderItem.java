@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.jpashop.domain.item.Item;
 import lombok.*;
 
@@ -12,6 +13,7 @@ public class OrderItem {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
