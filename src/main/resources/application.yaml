@@ -12,6 +12,8 @@ spring:
         show_sql: true
         format_sql: true
     database: mysql
+  messages:
+    basename: messages,errors
 
 logging:
   level:
